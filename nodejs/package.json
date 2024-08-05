@@ -22,7 +22,7 @@
 	},
 	"scripts": {
 		"build:js": "./scripts/build.sh",
-		"build:docs": "typedoc --out docs src/index.ts",
+		"build:docs": "typedoc --out docs --customCss ./docs-theme/style.css src/index.ts",
 		"build": "pnpm run \"/^build:.*/\""
 	},
 	"keywords": [

@@ -43,7 +43,7 @@ const speechify = new Speechify({
 	apiKey: "YOUR_API_KEY",
 });
 
-webServer.post("/get-token", async (req, res) => {
+webServer.post("/speechify-token", async (req, res) => {
 	const user = req.user;
 	if (!user) {
 		res.status(401).send("Unauthorized");
@@ -62,7 +62,7 @@ import { Speechify } from "@speechify/api-sdk";
 const speechify = new Speechify();
 
 authSystem.on("login", async () => {
-	const res = await fetch("/get-token", {
+	const res = await fetch("/speechify-token", {
 		method: "POST",
 	});
 	const tokenResponse = await res.json();

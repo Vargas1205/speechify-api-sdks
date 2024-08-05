@@ -23,7 +23,11 @@ jobs:
 
       - run: mkdir _site
 
-      - run: npm exec showdown -- makehtml -i README.md -o _site/index.html
+      - run: |
+          npm exec showdown -- makehtml -i README.md -o _site/content.html --flavor="github"
+          cp index-template.html _site/template.html
+          sed -e '/__CONTENT__/{r _site/content.html' -e 'd' -e '}' _site/template.html > _site/index.html
+          rm _site/content.html _site/template.html
 
       - run: cd nodejs && corepack enable && pnpm install
 
