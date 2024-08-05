@@ -23,11 +23,13 @@ jobs:
 
       - run: mkdir _site
 
+      - run: npm exec showdown makehtml -i README.md -o _site/index.html
+
       - run: cd nodejs && corepack enable && pnpm install
 
       - run: cd nodejs && pnpm run build:docs
 
-      - run: mv nodejs/docs _site
+      - run: mv nodejs/docs _site/nodejs
 
       - uses: actions/upload-pages-artifact@v3
 
