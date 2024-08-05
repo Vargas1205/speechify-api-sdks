@@ -8,7 +8,9 @@ Repository: https://github.com/SpeechifyInc/speechify-api-sdks
 
 Available SDKs:
 
-- Node.js: https://github.com/SpeechifyInc/speechify-api-sdks/tree/main/nodejs
+- Node.js:
+  - Code: https://github.com/SpeechifyInc/speechify-api-sdks/tree/main/nodejs
+  - Docs: https://speechifyinc.github.io/speechify-api-sdks/nodejs/index.html
 - Python: coming soon
 - Swift: coming soon
 - Kotlin: coming soon
