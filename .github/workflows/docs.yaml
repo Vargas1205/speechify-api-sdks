@@ -25,9 +25,9 @@ jobs:
 
       - run: cd nodejs && corepack enable && pnpm install
 
-      - run: pnpm run build:docs
+      - run: cd nodejs && pnpm run build:docs
 
-      - run: cd .. && mv nodejs/docs _site
+      - run: mv nodejs/docs _site
 
       - uses: actions/upload-pages-artifact@v3
 
