@@ -1,0 +1,42 @@
+{
+	"name": "@speechify/api-sdk",
+	"version": "0.0.1",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"files": [
+		"/lib",
+		"/src"
+	],
+	"exports": {
+		".": {
+			"require": {
+				"default": "./lib/cjs/index.js",
+				"types": "./lib/cjs/index.d.ts"
+			},
+			"import": {
+				"default": "./lib/esm/index.js",
+				"types": "./lib/esm/index.d.ts"
+			}
+		}
+	},
+	"scripts": {
+		"build": "./scripts/build.sh"
+	},
+	"keywords": [
+		"speechify",
+		"ai",
+		"api",
+		"sdk",
+		"text-to-speech",
+		"tts"
+	],
+	"license": "MIT",
+	"devDependencies": {
+		"typescript": "^5.5.4"
+	},
+	"volta": {
+		"node": "20.16.0",
+		"pnpm": "9.6.0"
+	}
+}
