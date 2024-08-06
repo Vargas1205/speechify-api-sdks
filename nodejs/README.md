@@ -49,7 +49,7 @@ webServer.post("/speechify-token", async (req, res) => {
 		res.status(401).send("Unauthorized");
 		return;
 	}
-	const tokenResponse = await speechify.issueAccessToken();
+	const tokenResponse = await speechify.accessTokenIssue();
 	res.json(tokenResponse);
 });
 ```
