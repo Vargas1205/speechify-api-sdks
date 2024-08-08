@@ -11,12 +11,12 @@
 	"exports": {
 		".": {
 			"require": {
-				"default": "./lib/cjs/index.js",
-				"types": "./lib/cjs/index.d.ts"
+				"default": "./lib/cjs/src/index.js",
+				"types": "./lib/cjs/src/index.d.ts"
 			},
 			"import": {
-				"default": "./lib/esm/index.js",
-				"types": "./lib/esm/index.d.ts"
+				"default": "./lib/esm/src/index.js",
+				"types": "./lib/esm/src/index.d.ts"
 			}
 		}
 	},
@@ -38,6 +38,7 @@
 	"license": "MIT",
 	"devDependencies": {
 		"@types/node": "^20.0.0",
+		"prettier": "^3.3.3",
 		"typedoc": "^0.26.5",
 		"typescript": "^5.5.4",
 		"vitest": "^2.0.5"
