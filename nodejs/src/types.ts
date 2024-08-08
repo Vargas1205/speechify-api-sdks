@@ -134,6 +134,12 @@ export type AccessTokenScope =
 	| "voices:delete"
 	| "voices:all";
 
+/**
+ * The raw server response of the access token request, following the OAuth 2.0 format.
+ * You shouldn't need to deal with it directly, use {@link AccessTokenResponse} instead.
+ * The only exception is when your server is not using the Speechify SDK,
+ * and you return the Speechify AI API response unmodified to the client app.
+ */
 export interface AccessTokenServerResponse {
 	access_token: string;
 	expires_in: number;
@@ -280,4 +286,21 @@ export interface AudioStreamRequest {
 	 * Additional options for the synthesis.
 	 */
 	options?: AudioSpeechRequestOptions;
+}
+
+/**
+ * The getter function to obtain the access token.
+ */
+export type AccessTokenGetter = () => Promise<
+	AccessTokenResponse | AccessTokenServerResponse
+>;
+
+/**
+ * The Speechify Access Token Manager init options.
+ */
+export interface SpeechifyAccessTokenManagerOptions {
+	/**
+	 * Lets you set the user initial authentication state at the moment of the SpeechifyAccessTokenManager initialization.
+	 */
+	isAuthenticated?: boolean;
 }
