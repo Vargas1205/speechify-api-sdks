@@ -391,7 +391,7 @@ Read more about this at https://docs.sws.speechify.com/docs/authentication`);
 			}
 		});
 
-		return new Response(stream, { status: 200 });
+		return stream;
 	}
 }
 
