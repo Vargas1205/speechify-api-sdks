@@ -363,7 +363,7 @@ Read more about this at https://docs.sws.speechify.com/docs/authentication`);
 		});
 
 		if (!response.body) {
-			throw new Error("Response body is empty")
+			throw new Error("Response body is empty");
 		}
 
 		const reader = response.body.getReader();
@@ -372,14 +372,14 @@ Read more about this at https://docs.sws.speechify.com/docs/authentication`);
 				try {
 					const { done, value } = await reader.read();
 
-				if (done) {
-					controller.close();
-					return;
-				}
+					if (done) {
+						controller.close();
+						return;
+					}
 
-				if (value) {
-					controller.enqueue(value);
-				} else {
+					if (value) {
+						controller.enqueue(value);
+					} else {
 						controller.error(new Error("Error occurred while reading stream"));
 					}
 				} catch (error) {
@@ -388,7 +388,7 @@ Read more about this at https://docs.sws.speechify.com/docs/authentication`);
 			},
 			cancel() {
 				reader.cancel();
-			}
+			},
 		});
 
 		return stream;
